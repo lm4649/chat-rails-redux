@@ -1,5 +1,6 @@
 const BASE_URL = '/api/v1';
 
+
 export const FETCH_MESSAGES = 'FETCH_MESSAGES';
 export const MESSAGE_POSTED = 'MESSAGE_POSTED';
 export const CHANNEL_SELECTED = 'CHANNEL_SELECTED';
@@ -30,14 +31,20 @@ export function createMessage(channel, content) {
   }).then(r => r.json());
 
   return {
-    type: 'MESSAGE_POSTED',
+    type: MESSAGE_POSTED ,
     payload: promise // Will be resolved by redux-promise
   };
 }
 
-export function selectChannel(channel) {
+export function selectChannel() {
   return {
-    type: CHANNEL_SELECTED,
-    payload: channel
-  };
+    type: CHANNEL_SELECTED
+  }
+}
+
+export function appendMessage(message) {
+  return {
+    type: MESSAGE_POSTED,
+    payload: message
+  }
 }
