@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
   belongs_to :user
   belongs_to :channel
-  validates presence: true
+  validates :content, presence: true
 end
