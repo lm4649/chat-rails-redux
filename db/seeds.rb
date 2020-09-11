@@ -15,8 +15,8 @@ Channel.destroy_all
 puts "creating channel"
 
 Channel.create!(name: 'general')
-Channel.create!(name: 'tokyo')
 Channel.create!(name: 'react')
+Channel.create!(name: 'tokyo')
 
 puts "#{Channel.count} channels created"
 

@@ -28,7 +28,6 @@ class MessageList extends Component {
   }
 
   render () {
-    debugger
     return (
       <div className="channel-container">
         <div className="channel-title">
