@@ -19,3 +19,22 @@ Channel.create!(name: 'tokyo')
 Channel.create!(name: 'react')
 
 puts "#{Channel.count} channels created"
+
+puts "creating users"
+
+User.create!(email: "marc@lewagon.com", password: 123456)
+User.create!(email: "tierri@lewagon.com", password: 123456)
+
+puts "#{User.count} users created"
+
+User.all.each do |user|
+  Channel.all.each do |channel|
+    m = Message.new(content: "Thank you for accepting me in the #{channel.name} channel ;-)")
+    m.user = user
+    m.channel = channel
+    m.save!
+  end
+end
+
+
+puts "#{Message.count} Messages created"
